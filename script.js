@@ -20,6 +20,7 @@ let newTarget = () => {
   const mainField = document.getElementById("main");
   target.addEventListener("click", () => {
     currentScore++;
+    fetch("https://api.countapi.xyz/update/Super_Stranka/ZULUL/?amount=1");
     currentScoreContainer.innerHTML = currentScore;
     newTarget();
     mainField.removeChild(target);
