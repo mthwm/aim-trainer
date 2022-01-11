@@ -2,7 +2,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -80,22 +81,26 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 body {
   background-color: #101010;
 }
 
 #scoreboard {
   height: 10vh;
+  display: -ms-grid;
   display: grid;
   place-content: center;
   color: white;
@@ -105,28 +110,32 @@ body {
 
 #main {
   height: 90vh;
+  display: -ms-grid;
   display: grid;
   place-content: center;
   position: relative;
-
-  button {
-    padding: 1rem 5rem;
-    color: white;
-    font-family: "Bebas Neue", cursive;
-    background: none;
-    font-size: 5rem;
-    border: solid 5px #6f00ff;
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
-    cursor: pointer;
-    transition: all ease 0.125s;
-
-    &:hover {
-      background-color: #6f00ff;
-      box-shadow: 0 0 20px 1px #6f00ff;
-    }
-  }
 }
+
+#main button {
+  padding: 1rem 5rem;
+  color: white;
+  font-family: "Bebas Neue", cursive;
+  background: none;
+  font-size: 5rem;
+  border: solid 5px #6f00ff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  cursor: pointer;
+  -webkit-transition: all ease 0.125s;
+  transition: all ease 0.125s;
+}
+
+#main button:hover {
+  background-color: #6f00ff;
+  -webkit-box-shadow: 0 0 20px 1px #6f00ff;
+          box-shadow: 0 0 20px 1px #6f00ff;
+}
+/*# sourceMappingURL=style.css.map */
