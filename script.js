@@ -6,23 +6,23 @@ let randomInt = (max) => Math.floor(Math.random() * max);
 
 // var currentScore = 0;
 
-let newTarget = () => {
-  const currentScoreContainer = document.getElementById("currentScore");
-  const target = document.createElement("div");
-  target.className = "target";
-  target.style.top += randomInt(90) + "%";
-  target.style.left += randomInt(90) + "%";
-  const mainField = document.getElementById("main");
-  target.addEventListener("click", () => {
-    currentScore++;
-    fetch("https://api.countapi.xyz/update/Super_Stranka/ZULUL/?amount=1");
-    currentScoreContainer.innerHTML = currentScore;
-    newTarget();
-    mainField.removeChild(target);
-  });
-  setTimeout(() => {
-    target.style.transform = "scale(0)";
-  }, 700);
+// let newTarget = () => {
+//   const currentScoreContainer = document.getElementById("currentScore");
+//   const target = document.createElement("div");
+//   target.className = "target";
+//   target.style.top += randomInt(90) + "%";
+//   target.style.left += randomInt(90) + "%";
+//   const mainField = document.getElementById("main");
+//   target.addEventListener("click", () => {
+//     currentScore++;
+//     fetch("https://api.countapi.xyz/update/Super_Stranka/ZULUL/?amount=1");
+//     currentScoreContainer.innerHTML = currentScore;
+//     newTarget();
+//     mainField.removeChild(target);
+//   });
+//   setTimeout(() => {
+//     target.style.transform = "scale(0)";
+//   }, 700);
 
 //
 
