@@ -1,34 +1,26 @@
 let randomInt = (max) => Math.floor(Math.random() * max);
 
-var currentScore = 0;
-
-let startGame = () => {
-  const mainField = document.getElementById("main");
-  const playButton = document.getElementById("playButton");
-  const currentScoreContainer = document.getElementById("currentScore");
-  currentScoreContainer.innerHTML = currentScore;
-  mainField.removeChild(playButton);
-  newTarget();
-  console.log(":(");
+window.onload = function () {
+  const playButton = document.createElement("button");
+  playButton.className = "playButton";
+  playButton.textContent = "play";
+  document.body.appendChild(playButton);
+  playButton.onclick = () => {
+    playButton.remove();
+    const currentScore = document.createElement("h1");
+    const highScoreDisplay = document.createElement("h1");
+    var score = 0;
+    var highScore = 0;
+    currentScore.textContent = `score: ${score}`;
+    highScoreDisplay.textContent = `high score: ${highScore}`;
+    currentScore.className = "currentScore";
+    highScoreDisplay.className = "highScore";
+    document.body.appendChild(currentScore);
+    document.body.appendChild(highScoreDisplay);
+    window.requestAnimationFrame(gameLoop);
+  };
 };
 
-let newTarget = () => {
-  const currentScoreContainer = document.getElementById("currentScore");
-  const target = document.createElement("div");
-  target.className = "target";
-  target.style.top += randomInt(90) + "%";
-  target.style.left += randomInt(90) + "%";
-  const mainField = document.getElementById("main");
-  target.addEventListener("click", () => {
-    currentScore++;
-    fetch("https://api.countapi.xyz/update/Super_Stranka/ZULUL/?amount=1");
-    currentScoreContainer.innerHTML = currentScore;
-    newTarget();
-    mainField.removeChild(target);
-  });
-  setTimeout(() => {
-    target.style.transform = "scale(0)";
-  }, 700);
-
-  mainField.appendChild(target);
-};
+function gameLoop() {
+  window.requestAnimationFrame(gameLoop);
+}
