@@ -1,5 +1,12 @@
 let randomInt = (max) => Math.floor(Math.random() * max);
 
+let startGame = () => {
+  const playButton = document.getElementById("playButton");
+  const mainField = document.getElementById("main");
+
+  mainField.removeChild(playButton);
+};
+
 // function sleep(ms) {
 //   return new Promise((resolve) => setTimeout(resolve, ms));
 // }
