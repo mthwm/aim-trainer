@@ -9,7 +9,7 @@ let startGame = () => {
   currentScoreContainer.innerHTML = currentScore;
   mainField.removeChild(playButton);
   newTarget();
-  console.log("ahoj");
+  console.log(":(");
 };
 
 let newTarget = () => {
