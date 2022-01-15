@@ -1,8 +1,16 @@
+:root {
+  --imgScale: 1;
+}
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+*::selection {
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar {
@@ -173,4 +181,17 @@ button {
 
 .highScore {
   top: 5%;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  transform: scale(var(--imgScale));
+  -webkit-transform: scale(var(--imgScale));
+  -moz-transform: scale(var(--imgScale));
+  -ms-transform: scale(var(--imgScale));
+  -o-transform: scale(var(--imgScale));
 }

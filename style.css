@@ -1,9 +1,21 @@
+:root {
+  --imgScale: 1;
+}
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+*::-moz-selection {
+  background-color: transparent;
+}
+
+*::selection {
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar {
@@ -181,5 +193,18 @@ button:hover {
 
 .highScore {
   top: 5%;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  transform: scale(var(--imgScale));
+  -webkit-transform: scale(var(--imgScale));
+  -moz-transform: scale(var(--imgScale));
+  -ms-transform: scale(var(--imgScale));
+  -o-transform: scale(var(--imgScale));
 }
 /*# sourceMappingURL=style.css.map */
